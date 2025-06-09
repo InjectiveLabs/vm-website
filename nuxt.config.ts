@@ -1,3 +1,6 @@
+// @ts-ignore
+import veauryVitePlugins from 'veaury/vite/index.js'
+
 const isLocalLayer = process.env.LOCAL_LAYER === 'true'
 
 export default defineNuxtConfig({
@@ -5,6 +8,9 @@ export default defineNuxtConfig({
   builder: 'vite',
 
   app: {
+    head: {
+      script: [{ innerHTML: 'var exports = {}' }]
+    },
     // bodyAttrs: {
     //   class: 'h-full'
     // },
@@ -13,7 +19,20 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-09-09',
+  extends: [
+    isLocalLayer
+      ? '../injective-ui/layer'
+      : 'github:InjectiveLabs/injective-ui/layer#master'
+  ],
+
+  vite: {
+    plugins: [
+      veauryVitePlugins({
+        type: 'vue',
+        isNuxt: true
+      })
+    ]
+  },
 
   css: ['@/assets/css/tailwind.css'],
 
@@ -39,11 +58,11 @@ export default defineNuxtConfig({
     locales: [{ code: 'en', file: './i18n/locales/en.ts' }]
   },
 
-  extends: [
-    isLocalLayer
-      ? '../injective-ui/layer'
-      : 'github:InjectiveLabs/injective-ui/layer#master'
-  ],
+  // extends: [
+  //   isLocalLayer
+  //     ? '../injective-ui/layer'
+  //     : 'github:InjectiveLabs/injective-ui/layer#master'
+  // ],
 
   colorMode: {
     fallback: 'dark',
@@ -53,5 +72,7 @@ export default defineNuxtConfig({
     hid: 'nuxt-color-mode-script',
     storageKey: 'nuxt-color-mode',
     globalName: '__NUXT_COLOR_MODE__'
-  }
+  },
+
+  compatibilityDate: '2025-06-10'
 })

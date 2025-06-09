@@ -1,0 +1,20 @@
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #fff;
+  }
+  50% {
+    box-shadow:
+      0 0 40px #fff,
+      0 0 40px rgb(0, 255, 234);
+  }
+  100% {
+    box-shadow: 0 0 10px #fff;
+  }
+}
+
+.react-background {
+  padding: 20px;
+  border-radius: 10px;
+  background: #b0f1f1;
+  animation: glow 1.5s infinite alternate;
+}

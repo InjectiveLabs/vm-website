@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@bangjelkoski/ens-validation": "^0.1.1",
+    "@dialectlabs/blinks": "^0.22.5",
     "@injectivelabs/exceptions": "1.15.24",
     "@injectivelabs/networks": "1.15.25",
     "@injectivelabs/nuxt-bugsnag": "0.0.12",
@@ -75,6 +76,8 @@
     "pinia": "2.2.6",
     "qr-code-generator-vue3": "^1.4.21",
     "tailwind-merge": "^2.5.2",
+    "veaury": "^2.6.2",
+    "vee-validate": "4.15.0",
     "vue-gtag": "2.0.1",
     "vue-hotjar": "1.4.0",
     "vue-imask": "7.6.1"
@@ -89,12 +92,14 @@
     "@nuxt/eslint": "^1.2.0",
     "@nuxt/typescript-build": "^3.0.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@vitejs/plugin-react": "^4.5.1",
     "autoprefixer": "latest",
     "eslint": "9.23.0",
     "eslint-plugin-perfectionist": "4.10.1",
     "floating-vue": "2.0.0-beta.24",
     "husky": "9.1.6",
     "jest": "^29.4.3",
+    "js-confetti": "^0.12.0",
     "lint-staged": "15.4.3",
     "nuxt-clarity-analytics": "^0.0.9",
     "prettier": "3.5.3",
@@ -104,6 +109,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
     "unplugin-auto-import": "^0.16.0",
+    "vite-tsconfig-paths": "^5.1.4",
     "vue-tsc": "2.1.6"
   },
   "resolutions": {

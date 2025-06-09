@@ -1,54 +1,13 @@
-<script lang="ts" setup>
-import { WalletConnectStatus } from '@shared/types'
+<script setup>
+import { applyPureReactInVue } from 'veaury'
+import ClientTestReact from '../react_app/ClientTestReact.jsx'
 
-const route = useRoute()
-const router = useRouter()
-const sharedWalletStore = useSharedWalletStore()
-const { $onError } = useNuxtApp()
-
-onMounted(() => {
-  handleGoogleOAuth()
-})
-
-function connectTurnkey() {
-  sharedWalletStore.connectTurnkeyGoogle().catch((error) => {
-    console.log(error)
-  })
-}
-
-function handleGoogleOAuth() {
-  if (sharedWalletStore.isUserConnected) {
-    return
-  }
-
-  if (!route.hash) {
-    return
-  }
-
-  const params = new URLSearchParams(route.hash.substring(1))
-  const idToken = params.get('id_token')
-
-  if (!idToken) {
-    return
-  }
-
-  router.replace({ hash: '' })
-
-  sharedWalletStore
-    .initTurnkeyGoogle(idToken)
-    .catch($onError)
-    .finally(() => {
-      sharedWalletStore.walletConnectStatus = WalletConnectStatus.idle
-    })
-}
+const ReactTest = applyPureReactInVue(ClientTestReact)
 </script>
 
 <template>
-  <article class="flex items-center justify-center">
-    <div>
-      <UButton @click="connectTurnkey">Connect turnkey!</UButton>
-
-      <pre>{{ { aaa: sharedWalletStore.injectiveAddress } }}</pre>
-    </div>
-  </article>
+  <div>
+    <ReactTest />
+    <!-- code for blink goes here -->
+  </div>
 </template>

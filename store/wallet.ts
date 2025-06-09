@@ -2,7 +2,7 @@ type WalletStoreState = {}
 
 const initialStateFactory = (): WalletStoreState => ({})
 
-export const useAppStore = defineStore('wallet', {
+export const useWalletStore = defineStore('wallet', {
   state: (): WalletStoreState => initialStateFactory(),
   actions: {}
 })
