@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { TURNKEY_CONTAINER_ID } from '@shared/utils/constant'
+// import { TURNKEY_CONTAINER_ID } from '@shared/utils/constant'
 
 useHead({
   htmlAttrs: {
@@ -13,7 +13,7 @@ useHead({
 
 <template>
   <section class="container mx-auto h-full">
-    <div :id="TURNKEY_CONTAINER_ID" class="opacity-0 h-0" />
+    <!-- <div :id="TURNKEY_CONTAINER_ID" class="opacity-0 h-0" /> -->
     <NuxtPage class="h-full" />
   </section>
 </template>

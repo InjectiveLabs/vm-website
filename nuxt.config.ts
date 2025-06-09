@@ -19,11 +19,11 @@ export default defineNuxtConfig({
     }
   },
 
-  extends: [
-    isLocalLayer
-      ? '../injective-ui/layer'
-      : 'github:InjectiveLabs/injective-ui/layer#master'
-  ],
+  // extends: [
+  //   isLocalLayer
+  //     ? '../injective-ui/layer'
+  //     : 'github:InjectiveLabs/injective-ui/layer#master'
+  // ],
 
   vite: {
     plugins: [
