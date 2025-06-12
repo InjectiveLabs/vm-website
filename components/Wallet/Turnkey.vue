@@ -1,52 +1,50 @@
 <script lang="ts" setup>
-// import { WalletConnectStatus } from '@shared/types'
+import { WalletConnectStatus } from '@shared/types'
 
-// const route = useRoute()
-// const router = useRouter()
-// const sharedWalletStore = useSharedWalletStore()
-// const { $onError } = useNuxtApp()
+const route = useRoute()
+const router = useRouter()
+const sharedWalletStore = useSharedWalletStore()
+const { $onError } = useNuxtApp()
 
-// onMounted(() => {
-//   handleGoogleOAuth()
-// })
+onMounted(() => {
+  handleGoogleOAuth()
+})
 
-// function connectTurnkey() {
-//   sharedWalletStore.connectTurnkeyGoogle().catch((error) => {
-//     console.log(error)
-//   })
-// }
+function connectTurnkey() {
+  sharedWalletStore.connectTurnkeyGoogle().catch((error) => {
+    console.log(error)
+  })
+}
 
-// function handleGoogleOAuth() {
-//   if (sharedWalletStore.isUserConnected) {
-//     return
-//   }
+function handleGoogleOAuth() {
+  if (sharedWalletStore.isUserConnected) {
+    return
+  }
 
-//   if (!route.hash) {
-//     return
-//   }
+  if (!route.hash) {
+    return
+  }
 
-//   const params = new URLSearchParams(route.hash.substring(1))
-//   const idToken = params.get('id_token')
+  const params = new URLSearchParams(route.hash.substring(1))
+  const idToken = params.get('id_token')
 
-//   if (!idToken) {
-//     return
-//   }
+  if (!idToken) {
+    return
+  }
 
-//   router.replace({ hash: '' })
+  router.replace({ hash: '' })
 
-//   sharedWalletStore
-//     .initTurnkeyGoogle(idToken)
-//     .catch($onError)
-//     .finally(() => {
-//       sharedWalletStore.walletConnectStatus = WalletConnectStatus.idle
-//     })
-// }
+  sharedWalletStore
+    .initTurnkeyGoogle(idToken)
+    .catch($onError)
+    .finally(() => {
+      sharedWalletStore.walletConnectStatus = WalletConnectStatus.idle
+    })
+}
 </script>
 
 <template>
   <div>
-    <!-- <UButton @click="connectTurnkey">Connect turnkey!</UButton>
-
-    <pre>{{ { aaa: sharedWalletStore.injectiveAddress } }}</pre> -->
+    <UButton @click="connectTurnkey">Connect turnkey!</UButton>
   </div>
 </template>

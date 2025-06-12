@@ -1,11 +1,8 @@
 // @ts-ignore
-import veauryVitePlugins from 'veaury/vite/index.js'
-
 const isLocalLayer = process.env.LOCAL_LAYER === 'true'
 
 export default defineNuxtConfig({
   ssr: false,
-  builder: 'vite',
 
   app: {
     head: {
@@ -19,20 +16,11 @@ export default defineNuxtConfig({
     }
   },
 
-  // extends: [
-  //   isLocalLayer
-  //     ? '../injective-ui/layer'
-  //     : 'github:InjectiveLabs/injective-ui/layer#master'
-  // ],
-
-  vite: {
-    plugins: [
-      veauryVitePlugins({
-        type: 'vue',
-        isNuxt: true
-      })
-    ]
-  },
+  extends: [
+    isLocalLayer
+      ? '../injective-ui/layer'
+      : 'github:InjectiveLabs/injective-ui/layer#master'
+  ],
 
   css: ['@/assets/css/tailwind.css'],
 
@@ -57,12 +45,6 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     locales: [{ code: 'en', file: './i18n/locales/en.ts' }]
   },
-
-  // extends: [
-  //   isLocalLayer
-  //     ? '../injective-ui/layer'
-  //     : 'github:InjectiveLabs/injective-ui/layer#master'
-  // ],
 
   colorMode: {
     fallback: 'dark',

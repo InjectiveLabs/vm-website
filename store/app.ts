@@ -1,8 +1,10 @@
-type AppStoreState = {};
+import { defineStore } from 'pinia'
 
-const initialStateFactory = (): AppStoreState => ({});
+type AppStoreState = {}
 
-export const useAppStore = defineStore("app", {
+const initialStateFactory = (): AppStoreState => ({})
+
+export const useAppStore = defineStore('app', {
   state: (): AppStoreState => initialStateFactory(),
-  actions: {},
-});
+  actions: {}
+})

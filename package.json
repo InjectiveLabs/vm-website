@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "@bangjelkoski/ens-validation": "^0.1.1",
-    "@dialectlabs/blinks": "^0.22.5",
     "@injectivelabs/exceptions": "1.15.24",
     "@injectivelabs/networks": "1.15.25",
     "@injectivelabs/nuxt-bugsnag": "0.0.12",
@@ -76,7 +75,6 @@
     "pinia": "2.2.6",
     "qr-code-generator-vue3": "^1.4.21",
     "tailwind-merge": "^2.5.2",
-    "veaury": "^2.6.2",
     "vee-validate": "4.15.0",
     "vue-gtag": "2.0.1",
     "vue-hotjar": "1.4.0",
@@ -92,7 +90,6 @@
     "@nuxt/eslint": "^1.2.0",
     "@nuxt/typescript-build": "^3.0.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@vitejs/plugin-react": "^4.5.1",
     "autoprefixer": "latest",
     "eslint": "9.23.0",
     "eslint-plugin-perfectionist": "4.10.1",
